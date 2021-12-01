@@ -4,6 +4,27 @@
 
 #pragma once
 
+//CAN BUS
+int RightFrontMotorCANID = 0;
+int RightBackMotorCANID = 0;
+int LeftFrontMotorCANID = 0;
+int LeftBackMotorCANID = 0;
+
+//Device ID for Spark Motor Controllers
+int SparkDeviceID = 5;
+
+//Device Type here
+int MotorControllerDeviceType = 2;
+
+/*
+CAN Addressing link found here:
+https://docs.wpilib.org/en/stable/docs/software/can-devices/can-addressing.html 
+You can change device id and device type
+*/
+
+
+
+
 /**
  * The Constants header provides a convenient place for teams to hold robot-wide
  * numerical or boolean constants.  This should not be used for any other

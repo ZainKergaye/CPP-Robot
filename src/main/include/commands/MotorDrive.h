@@ -7,7 +7,7 @@
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
 
-#include "subsystems/ExampleSubsystem.h"
+#include "subsystems/MotorInitializationSubsystem.h"
 
 /**
  * An example command that uses an example subsystem.
@@ -16,16 +16,16 @@
  * directly; this is crucially important, or else the decorator functions in
  * Command will *not* work!
  */
-class ExampleCommand
-    : public frc2::CommandHelper<frc2::CommandBase, ExampleCommand> {
+class MotorDrive
+    : public frc2::CommandHelper<frc2::CommandBase, MotorDrive> {
  public:
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  explicit ExampleCommand(ExampleSubsystem* subsystem);
+  explicit MotorDrive(MotorDrive* MotorInitializationSubsystem);
 
  private:
-  ExampleSubsystem* m_subsystem;
+  MotorDrive* MotorInitializationSubsystem;
 };

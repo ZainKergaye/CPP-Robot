@@ -3,10 +3,12 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "RobotContainer.h"
+#include "frc/Joystick.h"
+#include "subsystems/MotorInitializationSubsystem.h"
 
 RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem) {
   // Initialize all of your commands and subsystems here
-
+  MotorInitilization();
   // Configure the button bindings
   ConfigureButtonBindings();
 }

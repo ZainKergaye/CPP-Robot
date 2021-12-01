@@ -5,10 +5,13 @@
 #pragma once
 
 #include <frc2/command/SubsystemBase.h>
+#include <frc/CAN.h>
+#include <Constants.h>
 
-class ExampleSubsystem : public frc2::SubsystemBase {
+class MotorInitilization : public frc2::SubsystemBase {
  public:
-  ExampleSubsystem();
+   MotorInitilization();
+   
 
   /**
    * Will be called periodically whenever the CommandScheduler runs.
