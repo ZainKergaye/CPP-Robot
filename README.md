@@ -1,7 +1,9 @@
-#C++ Robot
+# C++ Robot
 
-##TODO:
+## TODO:
+
 *Make code
 
-##Configuration details
+## Configuration details
+
 *CAN BUS config on constants.cpp
