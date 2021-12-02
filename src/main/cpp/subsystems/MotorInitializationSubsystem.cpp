@@ -5,7 +5,10 @@
 #include "subsystems/MotorInitializationSubsystem.h"
 #include "Constants.h"
 #include "rev/CANSparkMax.h"
-
+#include "frc/SpeedControllerGroup.h"
+#include "frc/RobotDrive.h"
+#include "frc/Joystick.h"
+#include "RobotContainer.h"
 #define BrushlessMotorIdentifier rev::CANSparkMax::MotorType::kBrushless
 
 /*
@@ -17,15 +20,22 @@ https://docs.revrobotics.com/sparkmax/software-resources/spark-max-api-informati
  MotorInitilization:: MotorInitilization() {
   // Implementation of subsystem constructor goes here.
   //CAN bus configuration found in constant
-  rev::CANSparkMax RightFrontLeadMotor{RightFrontMotorCANID, BrushlessMotorIdentifier};
-  rev::CANSparkMax RightBackFollowMotor{RightBackMotorCANID, BrushlessMotorIdentifier};
-  rev::CANSparkMax LeftFrontLeadMotor{LeftFrontMotorCANID, BrushlessMotorIdentifier};
-  rev::CANSparkMax LeftBackFollowMotor{LeftBackMotorCANID, BrushlessMotorIdentifier};
+  rev::CANSparkMax RightFrontMotor{RightFrontMotorCANID, BrushlessMotorIdentifier};
+  rev::CANSparkMax RightBackMotor{RightBackMotorCANID, BrushlessMotorIdentifier};
+  rev::CANSparkMax LeftFrontMotor{LeftFrontMotorCANID, BrushlessMotorIdentifier};
+  rev::CANSparkMax LeftBackMotor{LeftBackMotorCANID, BrushlessMotorIdentifier};
 
+  /*   //TODO: put this in motor drive once working
+  RightBackMotor.Follow(RightFrontMotor);
+  LeftBackMotor.Follow(LeftFrontMotor); 
+  */
 
-  RightBackFollowMotor.Follow(RightFrontLeadMotor);
-  LeftBackFollowMotor.Follow(LeftFrontLeadMotor);
+  frc::SpeedControllerGroup RightMotors(RightFrontMotor, RightBackMotor);
+  frc::SpeedControllerGroup LeftMotors(LeftFrontMotor, LeftBackMotor);
 
+  frc::RobotDrive RobotDrive(RightMotors, LeftMotors);
+  frc::RobotDrive::CheckMotors();
+  frc::RobotDrive Drive(InputSpeed, InputTurning);
 
   }
 

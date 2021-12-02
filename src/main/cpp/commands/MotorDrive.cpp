@@ -5,7 +5,8 @@
 #include "commands/MotorDrive.h"
 #include "subsystems/MotorInitializationSubsystem.h"
 #include "frc/drive/DifferentialDrive.h"
+
 MotorDrive::MotorDrive(MotorDrive* MotorInitializationSubsystem)
     : MotorInitializationSubsystem{MotorInitializationSubsystem} {
-        frc::DifferentialDrive::ArcadeDrive();
+        
     }

@@ -4,6 +4,9 @@
 
 #pragma once
 
+
+//Variable initialization here
+
 //CAN BUS
 int RightFrontMotorCANID = 0;
 int RightBackMotorCANID = 0;
@@ -16,6 +19,17 @@ int SparkDeviceID = 5;
 //Device Type here
 int MotorControllerDeviceType = 2;
 
+//Joystick port configuration here
+int Joystick0Port = 0;
+
+//Joystick axis variables labled here
+int LeftStickYAxis;
+
+//Joystick inputs to final outputs
+//Input speed has to be from -1 to 1
+int InputSpeed;
+//The rate of turn, constant for different forward speeds. Set curve < 0 for left turn or curve > 0 for right turn. Set curve = e^(-r/w) to get a turn radius r for wheelbase w of your robot. Conversely, turn radius r = -ln(curve)*w for a given value of curve and wheelbase w.
+int InputTurning;
 /*
 CAN Addressing link found here:
 https://docs.wpilib.org/en/stable/docs/software/can-devices/can-addressing.html 
